@@ -1,0 +1,154 @@
+Name Bulbasaur 
+Dex No  1 
+Type  Grass ∙ Poison 
+Species  Seed Pokémon 
+Height  2'04" ∙ 0.7m 
+Weight  15.2lbs ∙ 6.9kg 
+Egg Groups  Monster ∙ Grass 
+Gender  ♂:88.1%♀:11.9% 
+Abilities  Overgrow ∙  ∙ Chlorophyll 
+BSTs 
+HP 5 
+ATK  5 
+DEF  5 
+Sp.ATK  7 
+Sp.DEF  7 
+SPD  5 
+Total  34 
+Move Speeds 
+Land 4 
+Fly  ‐ 
+Burrow  ‐ 
+Swim  ‐ 
+Climb  ‐ 
+Attributes
+INT  ‐1 
+STR  1 
+Skills
+Acro   +4 
+Athl   +4 
+End   +2 
+Per   +2 
+Sur   + 6 
+Features
+Size ‐ Small 
+Hatchrate ‐ Med 
+Evolution 
+Ivysaur ‐ 3 
+Level Moves  Tutor Moves  Egg Moves  TM Moves 
+Lvl‐Move  Lvl‐Move  Move  Move  TM: Move  TM: Move  TM: Move 
+1 ‐ Tackle     
+1 ‐ Growl 
+1 ‐ Leech Seed 
+2 ‐ Vine Whip 
+2 ‐ Poison Powder 
+2 ‐ Sleep Powder 
+3 ‐ Take Down 
+4 ‐ Razor Leaf 
+4 ‐ Sweet Scent 
+5 ‐ Growth 
+5 ‐ Double‐Edge 
+6 ‐ Worry Seed 
+6 ‐ Synthesis 
+7 ‐ Seed Bomb 
+Tutor Moves
+Bind 
+Giga Drain 
+Grass Pledge 
+Knock Off 
+Seed Bomb 
+Snore 
+Synthesis 
+Worry Seed 
+Egg Moves
+Amnesia 
+Charm 
+Curse 
+Endure 
+Giga Drain 
+Grass Whistle 
+Grassy Terrain 
+Ingrain 
+Leaf Storm 
+Magical Leaf 
+Nature Power 
+Petal Dance 
+Power Whip 
+Skull Bash 
+Sludge
+TM06: Toxic 
+TM09: Venoshock 
+TM10: Hidden Power 
+TM11: Sunny Day 
+TM16: Light Screen 
+TM17: Protect 
+TM20: Safeguard 
+TM21: Frustration 
+TM22: Solar Beam 
+TM27: Return 
+TM32: Double Team 
+TM36: Sludge Bomb 
+TM42: Facade 
+TM44: Rest 
+TM45: Attract 
+TM48: Round 
+TM49: Echoed Voice 
+TM53: Energy Ball 
+TM70: Flash 
+TM75: Swords Dance 
+TM86: Grass Knot 
+TM87: Swagger 
+TM88: Sleep Talk 
+TM90: Substitute 
+TM94: Rock SmashXY 
+TM94: Secret PowerORAS 
+TM96: Nature Power 
+TM100: Confide 
+HM01: Cut 
+HM04: Strength 
+HM06: Rock SmashORAS
+Name Metapod 
+Dex No  11 
+Type  Bug 
+Species  Cocoon Pokémon 
+Height  2'04" ∙ 0.7m 
+Weight  21.8lbs ∙ 9.9kg 
+Egg Groups  Bug ∙  
+Gender  ♂:50%♀:50% 
+Abilities  Shed Skin ∙  ∙  
+BSTs 
+HP 5 
+ATK  2 
+DEF  6 
+Sp.ATK  3 
+Sp.DEF  3 
+SPD  3 
+Total  22 
+Move Speeds 
+Land 0 
+Fly  ‐ 
+Burrow  ‐ 
+Swim  ‐ 
+Climb  ‐ 
+Attributes
+INT  ‐1 
+STR  ‐3 
+Skills
+Dec  +6 
+Ins  +4 
+Per  +4 
+Ste   +8 
+Features
+Size ‐ Small 
+Bugsilk 
+Evolution 
+Butterfree ‐ 2 
+Level Moves  Tutor Moves  Egg Moves  TM Moves 
+Lvl‐Move  Lvl‐Move  Move  Move  TM: Move  TM: Move  TM: Move 
+1 ‐ Harden 
+1 ‐ Harden 
+Tutor Moves
+Bug Bite 
+Electroweb 
+Iron Defense 
+Egg Moves
