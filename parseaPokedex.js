@@ -1,15 +1,3 @@
-"use strict";
-
-////////////////////////////////////////////////////////
-/////////////       DATOS      /////////////////////////
-////////////////////////////////////////////////////////
-// Definir constantes
-const separadorMovimientos = "\r\nLevel Moves  Tutor Moves  Egg Moves  TM Moves \r\nLvl‐Move  Lvl‐Move  Move  Move  TM: Move  TM: Move  TM: Move \r\n";
-//const separadorMovimientos = "\r\nLevel Moves  Tutor Moves  Egg Moves  TM Moves \r\nLvl-Move  Lvl-Move  Move  Move  TM: Move  TM: Move  TM: Move \r\n";
-
-////////////////////////////////////////////////////////
-////////////       FUNCIONES      //////////////////////
-////////////////////////////////////////////////////////
 function parsePokemonData(data) {
     // Dividir cada Pokemon por la palabra Name
     //data = data.replace("‐","-");
@@ -45,6 +33,7 @@ function parsePokemonData(data) {
 
         // Procesar cada linea
         trozoLineas.forEach(line => {
+            line = line.trim().replaceAll("  "," ");
             // Indicar secciones
             if (line.startsWith("Name")){
                 nombre = line.split(" ")[1].trim();
@@ -53,12 +42,14 @@ function parsePokemonData(data) {
                 dexNum = line.split(" ")[2];
             }
             else if (line.startsWith("Type")){
-                const tipos = line.split(" ")[1].split("∙");
+                let tipos = line.replaceAll(" ∙ ","∙").split(" ")[1].split("∙");
                 tipo1 = tipos[0].trim();
-                tipo2 = tipos[1] ? tipos[1].trim() : null;
+                if ((tipos.length == 2)){
+                    tipo2 = tipos[1].trim();
+                }
             }
             else if (line.startsWith("Species")){
-                especie = line.split(" ")[1];
+                especie = line.replaceAll("  "," ").replaceAll("Species ","");
             }
             else if (line.startsWith("Height")){
                 altura = line.split("∙")[1].trim();
@@ -80,30 +71,32 @@ function parsePokemonData(data) {
 
         // Pocesar las Stats
         trozoStats.forEach(stat => {
+            stat = stat.replaceAll("  "," ");
             // Separar Stats
             if (stat.startsWith("HP")){
-                hp = stat.split(" ")[1].trim();
+                hp = parseInt(stat.split(" ")[1].trim());
             }
             else if (stat.startsWith("ATK")){
-                atk = stat.split(" ")[1].trim();
+                atk = parseInt(stat.split(" ")[1].trim());
             }
             else if (stat.startsWith("DEF")){
-                def = stat.split(" ")[1].trim();
+                def = parseInt(stat.split(" ")[1].trim());
             }
             else if (stat.startsWith("Sp.ATK")){
-                spAtk = stat.split(" ")[1].trim();
+                spAtk = parseInt(stat.split(" ")[1].trim());
             }
             else if (stat.startsWith("Sp.DEF")){
-                spDef = stat.split(" ")[1].trim();
+                spDef = parseInt(stat.split(" ")[1].trim());
             }
             else if (stat.startsWith("SPD")){
-                spd = stat.split(" ")[1].trim();
+                spd = parseInt(stat.split(" ")[1].trim());
             }
         })
         stats = new Stats(hp,atk,def,spAtk,spDef,spd);
 
         // Procesar las velocidades
         trozoVelocidades.forEach(velocidad => {
+            velocidad = velocidad.replaceAll("  "," ");
             // Separar velocidades
             if (velocidad.startsWith("Land")){
                 if (velocidad.split(" ")[1].trim()=="-"){
@@ -150,6 +143,7 @@ function parsePokemonData(data) {
 
         // Procesar los atributos
         trozoAtributos.forEach(atributo => {
+            atributo = atributo.replaceAll("  "," ").replaceAll("‐","-");
             if (atributo.startsWith("INT")){
                 if (atributo.split(" ")[1].trim()=="-"){
                     intAtrib = null;
@@ -177,6 +171,10 @@ function parsePokemonData(data) {
 }
 
 
+
+////////////////////////////////////////////////////////
+////////////////       MAIN      ///////////////////////
+////////////////////////////////////////////////////////
 let entradaTexto;
 fetch("prueba.txt")
     .then((res) => res.text())

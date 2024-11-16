@@ -6440,7 +6440,7 @@ function parsePokemonData(data) {
         let trozoAtributos = trozoInfo.split("\r\nAttributes\r\n")[1].split("\r\nSkills\r\n")[0].split("\n").map(line => line.trim());
         let skills = trozoInfo.split("\r\nSkills\r\n")[1].split("\r\nFeatures\r\n")[0].split("\n").map(line => line.trim());
         let caracteristicas = trozoInfo.split("\r\nFeatures\r\n")[1].split("\r\nEvolution \r\n")[0].split("\n").map(line => line.trim());
-        let evolucion = trozoInfo.split("\r\nFeatures\r\n")[1].split("\r\nEvolution \r\n")[1].split("\n").map(line => line.trim());
+        let evolucion = trozoInfo.split("\r\nFeatures\r\n")[1].split("\r\nEvolution")[1].split("\n").map(line => line.trim());
 
         // Trozos movimientos
         let levelMoves = trozoMovimientos.split("\r\nTutor Moves")[0].split("\n").map(line => line.trim());
@@ -6460,6 +6460,7 @@ function parsePokemonData(data) {
             // Indicar secciones
             if (line.startsWith("Name")){
                 nombre = line.split(" ")[1].trim();
+                console.log(nombre);
             }
             else if (line.startsWith("Dex No")){
                 dexNum = line.split(" ")[2];
@@ -6484,8 +6485,13 @@ function parsePokemonData(data) {
                 gruposHuevo = line.split(" ").slice(2).join("").split("∙").map(g => g.trim());
             }
             else if (line.startsWith("Gender")){
-                const ratios = line.split("♂:")[1].split("♀:");
-                genero = new Genero(parseFloat(ratios[0]), parseFloat(ratios[1]));
+                if (!(line.replaceAll("  "," ").split(" ").reverse()[0]=="Genderless")){
+                    const ratios = line.split("♂:")[1].split("♀:");
+                    genero = new Genero(parseFloat(ratios[0]), parseFloat(ratios[1]));
+                }
+                else {
+                    genero = new Genero(0,0);
+                }
             }
             else if (line.startsWith("Abilities")){
                 habilidades = line.split(" ").slice(1).join("").split("∙").map(h => h.trim());
@@ -6566,7 +6572,7 @@ function parsePokemonData(data) {
 
         // Procesar los atributos
         trozoAtributos.forEach(atributo => {
-            atributo = atributo.replaceAll("  "," ");
+            atributo = atributo.replaceAll("  "," ").replaceAll("‐","-");
             if (atributo.startsWith("INT")){
                 if (atributo.split(" ")[1].trim()=="-"){
                     intAtrib = null;
